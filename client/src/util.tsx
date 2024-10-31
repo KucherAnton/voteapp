@@ -16,10 +16,10 @@ export const colorizeText = (text: string): JSX.Element[] =>
 type TokenPayload = {
   iat: number;
   exp: number;
-  sub: string;
+  userId: string;
   name: string;
   pollID: string;
 };
 
 export const getTokenPayload = (accessToken: string): TokenPayload =>
-  JSON.parse(atob(accessToken.split('.')[1]));
+  JSON.parse(window.atob(accessToken.split('.')[1]));
